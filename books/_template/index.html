@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =====================================================================
+       CODE CITIES — BOOK TEMPLATE
+       =====================================================================
+       Use this file as the starting point for any book in the series
+       (Paris, Rome, Washington, Istanbul, Vienna, Beijing).
+
+       HOW TO DUPLICATE FOR A NEW BOOK
+       ------------------------------------------------------------------
+       1. Copy this folder:  books/_template/  ->  books/paris/
+       2. In the new index.html, find-and-replace ALL of these tokens:
+
+            {{BOOK_TITLE}}        The Paris Code
+            {{BOOK_SHORT}}        Paris Code
+            {{CITY}}              Paris
+            {{DOSSIER_NUMBER}}    02              (use 02, 03, 04, ...)
+            {{HERO_LINE_1}}       Some doors in Paris
+            {{HERO_LINE_2}}       were never meant to be opened.
+            {{HERO_SUB}}          You just did. Take the dossier the book couldn't print.
+            {{HOOK_PARAGRAPH}}    One or two sentences about the city's voice.
+            {{FORM_EMBED_URL}}    iframe src from the new Google Form
+            {{FORM_PUBLIC_URL}}   public URL of the new Google Form (fallback)
+            {{HERO_IMAGE_PATH}}   ../../assets/img/hero-paris.jpg   (drop the image)
+            {{COVER_IMAGE_PATH}}  ../../assets/img/cover-paris.jpg
+
+       3. Add a new Drive folder:  CodeCities/02-Paris/dossier/
+       4. Add a new Google Form + Sheet tab named "02-Paris".
+       5. Add a new entry to CONFIG.books in apps-script/Code.gs.
+
+       That's it. The design system, css, and js are all shared.
+       ===================================================================== -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{BOOK_TITLE}} — Reader Dossier | Code Cities</title>
+  <meta name="description" content="You finished the book. The investigation continues. Claim the {{CITY}} Dossier — free, for readers only.">
+
+  <meta property="og:title" content="{{BOOK_TITLE}} — Reader Dossier">
+  <meta property="og:description" content="Claim the dossier the book couldn't print. Free, for readers only.">
+  <meta property="og:image" content="{{COVER_IMAGE_PATH}}">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+
+  <!-- Per-book hero image (override only if needed). -->
+  <style>
+    .hero__bg {
+      background-image:
+        linear-gradient(180deg, rgba(11,11,13,0.45) 0%, rgba(11,11,13,0.85) 60%, var(--ink) 100%),
+        url("{{HERO_IMAGE_PATH}}");
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <p class="eyebrow">Code Cities · Dossier {{DOSSIER_NUMBER}} · {{CITY}}</p>
+      <h1>{{HERO_LINE_1}}<br>{{HERO_LINE_2}}</h1>
+      <p class="hero__sub">{{HERO_SUB}}</p>
+      <a href="#request" class="btn">Request the {{CITY}} Dossier</a>
+      <p class="hero__micro">Free. No spam. One click to unsubscribe. Built for readers, not marketers.</p>
+    </div>
+  </header>
+
+  <section class="hook">
+    <div class="container reveal">
+      <p>{{HOOK_PARAGRAPH}}</p>
+      <p>If you've just turned the final page of <em>{{BOOK_TITLE}}</em>, you already know which places to look at twice.</p>
+    </div>
+  </section>
+
+  <section class="dossier">
+    <div class="container reveal">
+      <p class="eyebrow">Inside the Dossier</p>
+      <h2>Four files. One envelope.<br>Yours in sixty seconds.</h2>
+
+      <div class="dossier-grid">
+        <article class="card">
+          <div class="card__num">File 01</div>
+          <h3>The {{CITY}} Map</h3>
+          <p>A working map of every location referenced in the novel, annotated with the codes that didn't survive the final edit.</p>
+        </article>
+        <article class="card">
+          <div class="card__num">File 02</div>
+          <h3>Hidden {{CITY}}: Intelligence Brief №{{DOSSIER_NUMBER}}</h3>
+          <p>A dossier-style report on the routes, doors, and quiet places the novel only hints at. Sourced and footnoted.</p>
+        </article>
+        <article class="card">
+          <div class="card__num">File 03</div>
+          <h3>Decoded: The {{CITY}} Symbols Field Guide</h3>
+          <p>The full key to the symbols the protagonist uses. An illustrated reference you can carry on your phone.</p>
+        </article>
+        <article class="card card--classified">
+          <div class="card__num">File 04</div>
+          <h3>Classified Preview — Book {{NEXT_BOOK_NUMBER}}</h3>
+          <p>A first transmission from the next book. Months before publication, and only for readers who hold the dossier.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="request" class="capture">
+    <div class="container reveal">
+      <p class="eyebrow">Request access</p>
+      <h2>Sign the register.</h2>
+      <p class="lead">
+        Leave a name and an email. The dossier is delivered to your inbox within the minute. The address is used only to send you the files you've requested and the occasional transmission when a new book in the series is ready. Nothing else.
+      </p>
+
+      <div class="form-wrap">
+        <iframe
+          src="{{FORM_EMBED_URL}}"
+          title="Request the {{CITY}} Dossier"
+          width="100%"
+          height="640"
+          frameborder="0">
+          Loading the request form&hellip;
+        </iframe>
+        <p class="form-fallback">
+          Form not loading? <a href="{{FORM_PUBLIC_URL}}" target="_blank" rel="noopener">Open the request form in a new tab</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta reveal">
+    <div class="container">
+      <h2>The book ended.<br>The investigation hasn't.</h2>
+      <p class="lead muted">Claim the {{CITY}} Dossier and stay on the list for the next file in the series.</p>
+      <div class="divider"></div>
+      <a href="#request" class="btn">Request the dossier &rarr;</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <p>&copy; <span id="year">2026</span> [Author Name]. All rights reserved.</p>
+        <p><em>Code Cities</em> and <em>{{BOOK_TITLE}}</em> are trademarks of the author.</p>
+      </div>
+      <div>
+        <ul>
+          <li><strong>Privacy:</strong> We store only your name and email, on Google's infrastructure, and we use them only to send the files you requested and occasional series updates.</li>
+          <li>One-click unsubscribe in every email. Request deletion at any time: <a href="mailto:privacy@[yourdomain].com">privacy@[yourdomain].com</a></li>
+          <li>Contact: <a href="mailto:hello@[yourdomain].com">hello@[yourdomain].com</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-cta" aria-hidden="true">
+    <a href="#request" class="btn">Request the dossier</a>
+  </div>
+
+  <script src="../../assets/js/main.js" defer></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

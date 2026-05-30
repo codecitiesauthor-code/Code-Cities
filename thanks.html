@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transmission Received — The Westminster Code</title>
+  <meta name="description" content="Your dossier is on its way. Check your inbox.">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* Page-local: vertically centre the confirmation card. */
+    .thanks-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem;
+    }
+    .thanks-card {
+      max-width: 560px;
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+    }
+    .thanks-card__cover {
+      display: block;
+      width: 110px;
+      height: auto;
+      margin: 0 auto 1.5rem;
+      border: 1px solid var(--rule);
+      box-shadow: var(--shadow-soft);
+    }
+    .thanks-card .stamp {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      color: var(--brass);
+      border: 1px solid var(--brass);
+      padding: 0.35rem 0.9rem;
+      margin-bottom: 1.5rem;
+      transform: rotate(-2deg);
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+      text-align: left;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .checklist li {
+      padding: 0.6rem 0 0.6rem 1.75rem;
+      border-bottom: 1px dashed var(--rule);
+      position: relative;
+    }
+    .checklist li:last-child { border-bottom: 0; }
+    .checklist li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      color: var(--brass);
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+    }
+    .thanks-card__share {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .thanks-card__actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="thanks-wrap">
+    <div class="thanks-card">
+      <img src="assets/img/cover-westminster.jpg"
+           alt="The Westminster Code — book cover"
+           class="thanks-card__cover"
+           width="110" height="165">
+
+      <span class="stamp">Transmission Received</span>
+      <h1 style="font-size: clamp(1.8rem, 4vw, 2.4rem);">Your dossier is on its way.</h1>
+      <p class="lead muted">
+        Check your inbox in the next sixty seconds. Look for an envelope marked
+        <em>Code Cities &mdash; Westminster Dossier</em>, sent by <strong>C.A. Sterling</strong>.
+      </p>
+
+      <ul class="checklist">
+        <li>Not in your inbox? Check <em>Spam</em> or the <em>Promotions</em> tab and mark the message as <em>Not spam</em>.</li>
+        <li>Add the sender to your contacts so future transmissions arrive cleanly.</li>
+        <li>The four download links inside don't expire. Files are quietly updated as the investigation continues.</li>
+        <li>One click in any email unsubscribes you, instantly. Nothing else.</li>
+      </ul>
+
+      <div class="thanks-card__actions">
+        <a href="index.html" class="btn btn--ghost">Return to the landing</a>
+      </div>
+
+      <p class="thanks-card__share">
+        Know another reader who'd want the dossier?
+        <a href="mailto:?subject=The%20Westminster%20Code%20%E2%80%94%20reader%20dossier&amp;body=I%20thought%20you%27d%20want%20this.%20Free%2C%20no%20catch.%20%0A%0AClaim%20the%20Westminster%20Dossier%3A%20%0Ahttps%3A%2F%2FYOUR-GITHUB-USER.github.io%2Fcode-cities%2F">Forward the landing page</a>.
+      </p>
+    </div>
+  </main>
+
+</body>
+</html>
